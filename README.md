@@ -1,6 +1,6 @@
 [![npm version](https://badge.fury.io/js/homebridge-raspberrypi-remote.svg)](https://badge.fury.io/js/homebridge-raspberrypi-remote)
 
-# homebridge-raspberrypi-remote
+# RPi remote control
 This is Raspberry Pi Remote plugin for [Homebridge](https://github.com/nfarina/homebridge). 
 
 
