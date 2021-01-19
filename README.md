@@ -42,3 +42,7 @@ This is Raspberry Pi Remote plugin for [Homebridge](https://github.com/nfarina/h
 
 # License
 MIT License
+
+
+Original one by:
+https://github.com/clauzewitz

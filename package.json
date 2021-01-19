@@ -1,13 +1,16 @@
 {
 	"name": "RPi-Controler",
-	"version": "1.0.2",
+	"version": "1.0.1",
 	"description": "Raspberry Pi Remote control plugin for Homebridge.",
 	"license": "MIT",
 	"keywords": [
 		"homebridge-plugin",
 		"raspberry pi",
 		"raspberrypi",
-		"remote"
+		"remote",
+		"controler",
+		"rpi",
+		"pi"
 	],
 	"repository": {
 		"type": "git",
