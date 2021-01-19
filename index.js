@@ -192,7 +192,7 @@ function RaspberryPi(log, config) {
 	}
 
 	if (this.enableReboot) {
-		this.rebootService = new Service.Switch(this.name + ' Reboot', 'Reboot');
+		this.rebootService = new Service.Button(this.name + ' Reboot', 'Reboot');
 
 		this.rebootService
 			.getCharacteristic(Characteristic.On)
@@ -227,7 +227,7 @@ RaspberryPi.prototype = {
 
 		const that = this;
 		
-		exec('shutdown -h now', function (error, stdout, stderr) {
+		exec('sudo poweroff', function (error, stdout, stderr) {
 			if (error) {
 				logger(error);
 			} else {
@@ -255,7 +255,7 @@ RaspberryPi.prototype = {
 
 		const that = this;
 		
-		exec('reboot', function (error, stdout, stderr) {
+		exec('sudo reboot', function (error, stdout, stderr) {
 			if (error) {
 				logger(error);
 			} else {
