@@ -8,4 +8,4 @@ gpuTemp0=$(/opt/vc/bin/vcgencmd measure_temp)
 gpuTemp0=${gpuTemp0}
 gpuTemp0=${gpuTemp0//temp=/}
 
-echo $(date "+%Y-%m-%d %H:%M") Temperature CPU : $cpuTemp1"."$cpuTempM"'C, GPU : "$gpuTemp0
+echo $(date "+%Y-%m-%d %H:%M") Temperature CPU : $cpuTemp1"."$cpuTempM"'F, GPU : "$gpuTemp0
