@@ -29,13 +29,8 @@ This is Raspberry Pi Remote plugin for [Homebridge](https://github.com/nfarina/h
         {
           "accessory": "RaspberryPi",
           "name": "Raspberry Pi",
-          "os": "linux",
-          "showTemperature": true,
           "enableReboot": true,
-          "accessory": "RaspberryPiTemperature",
-          "name": "RaspberryPi CPU Temperature",
-          "temperatureMeasurement": "celsius",
-          "updateInterval": 1000
+
         }
       ]
     ```
