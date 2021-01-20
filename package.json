@@ -1,5 +1,4 @@
 {
-	"private": "false",
 	"name": "homebridge-rpi-controller",
 	"displayname": "RPi Controller",
 	"repository.url": "https://github.com/bloomkd46/RPi-controler",
