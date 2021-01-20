@@ -1,5 +1,19 @@
 var Accessory, Service, Characteristic, UUIDGen;
 
+function RaspberryPi(log, config) {
+	logger = log;
+
+	this.services = [];
+	this.name = config.name || 'Respberry Pi';
+	this.os = config.os || 'linux';
+	this.interval = Number(config.interval) || 60000;
+	this.showTemperature = config.showTemperature || false;
+	this.enableReboot = config.enableReboot || false;
+	this.operatingState = true;
+	this.temperature = undefined;
+    
+    
+    
 const fs = require('fs');
 const packageFile = require("./package.json");
 
@@ -38,7 +52,7 @@ function isConfig(configFile, type, name) {
     return false;
 }
 
-function RaspberryPiTemperature(log, config) {
+if (this.showTemperature) function RaspberryPiTemperature(log, config) {
     if(null == config) {
         return;
     }
@@ -57,6 +71,18 @@ function RaspberryPiTemperature(log, config) {
     }
     this.multiplier = config["multiplier"] || 1000;
     this.temperatureMeasurement = (typeof config["temperatureMeasurement"] === 'undefined') ? 'fahrenheit' : config["temperatureMeasurement"];
+}
+    
+    if (this.enableReboot) {
+		this.rebootService = new Service.Switch(this.name + ' Reboot', 'Reboot');
+
+		this.rebootService
+			.getCharacteristic(Characteristic.On)
+			.on('get', this.getRebootState.bind(this))
+			.on('set', this.setRebootState.bind(this));
+
+		this.services.push(this.rebootService);
+	}
 }
 
 RaspberryPiTemperature.prototype = {
