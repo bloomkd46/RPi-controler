@@ -1,5 +1,4 @@
 {
-	"private": "false"
 	"name": "RPi-Controler",
 	"version": "1.0.1",
 	"description": "Raspberry Pi Remote control plugin for Homebridge.",
