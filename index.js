@@ -11,9 +11,19 @@ function RaspberryPi(log, config) {
 	this.enableReboot = config.enableReboot || false;
 	this.operatingState = true;
 	this.temperature = undefined;
-    
-    
-    
+	
+	getDeviceInfo();
+	initCustomService();
+
+	this.service = new Service.RaspberryPi(this.name, 'Shutdown');
+	this.serviceInfo = new Service.AccessoryInformation();
+
+	this.service
+		.getCharacteristic(Characteristic.On)
+		.on('get', this.getPowerState.bind(this))
+		.on('set', this.setPowerState.bind(this));
+
+      
 const fs = require('fs');
 const packageFile = require("./package.json");
 
@@ -52,7 +62,7 @@ function isConfig(configFile, type, name) {
     return false;
 }
 
-if (this.showTemperature) function RaspberryPiTemperature(log, config) {
+function RaspberryPiTemperature(log, config) {
     if(null == config) {
         return;
     }
@@ -96,7 +106,7 @@ RaspberryPiTemperature.prototype = {
             .setCharacteristic(Characteristic.SerialNumber, "Undefined")
             .setCharacteristic(Characteristic.FirmwareRevision, packageFile.version);
 
-        var raspberrypiService = new Service.TemperatureSensor(that.name);
+        if (this.showTemperature)var raspberrypiService = new Service.TemperatureSensor(that.name);
         var currentTemperatureCharacteristic = raspberrypiService.getCharacteristic(Characteristic.CurrentTemperature);
         function getCurrentTemperature() {
             var data = fs.readFileSync(that.readFile, "utf-8");
@@ -116,6 +126,57 @@ RaspberryPiTemperature.prototype = {
         currentTemperatureCharacteristic.on('get', (callback) => {
             callback(null, getCurrentTemperature());
         });
+		getPowerState: function (callback) {
+		callback(null, this.operatingState);
+	},
+
+	setPowerState: function (state, callback) {
+		if (!this.operatingState) {
+			return;
+		}
+
+		const that = this;
+		
+		exec('sudo poweroff', function (error, stdout, stderr) {
+			if (error) {
+				logger(error);
+			} else {
+				that.operatingState = false;
+				
+				logger.debug('operating state: %s', that.operatingState);
+
+				callback(null, that.operatingState);
+			}
+		});
+	},
+
+	getRebootState: function (callback) {
+		if (!this.operatingState) {
+			return;
+		}
+
+		callback(null, !this.operatingState);
+	},
+
+	setRebootState: function (state, callback) {
+		if (!this.operatingState) {
+			return;
+		}
+
+		const that = this;
+		
+		exec('sudo reboot', function (error, stdout, stderr) {
+			if (error) {
+				logger(error);
+			} else {
+				that.operatingState = false;
+				
+				logger.debug('operating state: %s', that.operatingState);
+
+				callback(null, that.operatingState);
+			}
+		});
+	},
 
         return [infoService, raspberrypiService];
     }
