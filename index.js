@@ -13,7 +13,7 @@ module.exports = function (homebridge) {
 	Service = homebridge.hap.Service;
 	Characteristic = homebridge.hap.Characteristic;
 
-	homebridge.registerAccessory('homebridge-raspberrypi-remote', 'RaspberryPi', RaspberryPi);
+	homebridge.registerAccessory('homebridge-rpi-controller', 'RaspberryPi', RaspberryPi);
 }
 
 function initCustomService() {
