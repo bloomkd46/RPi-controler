@@ -17,7 +17,7 @@ This is Raspberry Pi Remote plugin for [Homebridge](https://github.com/nfarina/h
 1. Install required packages.
 
    ```
-   npm install -g homebridge-raspberrypi-remote
+   npm install -g homebridge-rpi-controller
    ```
 
 2. Check the OS of Raspberry Pi.
