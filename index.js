@@ -339,7 +339,7 @@ RaspberryPi.prototype = {
 
 		const that = this;
 
-		exec('/usr/lib/node_modules/homebridge-raspberrypi-remote/current_temperature.sh', function (error, stdout, stderr) {
+		exec('/usr/lib/node_modules/homebridge-rpi-controller/current_temperature.sh', function (error, stdout, stderr) {
 			if (error) {
 				logger(error);
 			} else {
