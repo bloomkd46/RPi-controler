@@ -4,7 +4,7 @@ function RaspberryPi(log, config) {
 	logger = log;
 
 	this.services = [];
-	this.name = config.name || 'Respberry Pi';
+	this.name = config.name || 'Raspberry Pi';
 	this.os = config.os || 'linux';
 	this.interval = Number(config.interval) || 60000;
 	this.showTemperature = config.showTemperature || false;
