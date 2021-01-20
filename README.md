@@ -50,4 +50,5 @@ MIT License
 # Credit
 
 Original By [Clauzewitz](https://github.com/clauzewitz).
+
 Temperature Unit By [YingHangCode](https://github.com/YinHangCode/homebridge-raspberrypi-temperature).
