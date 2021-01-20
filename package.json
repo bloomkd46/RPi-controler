@@ -1,6 +1,9 @@
 {
+	"private": "false",
 	"name": "homebridge-rpi-controller",
 	"displayname": "RPi Controller",
+	"repository.url": "https://github.com/bloomkd46/RPi-controler",
+	"bugs.url": "https://github.com/bloomkd46/RPi-controler/issues",
 	"version": "1.0.5",
 	"description": "Raspberry Pi Remote control plugin for Homebridge.",
 	"license": "MIT",
@@ -9,7 +12,7 @@
 		"raspberry pi",
 		"raspberrypi",
 		"remote",
-		"controler",
+		"controller",
 		"rpi",
 		"pi"
 	],
