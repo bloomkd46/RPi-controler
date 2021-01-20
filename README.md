@@ -48,4 +48,4 @@ MIT License
 
 # Credit
 
-Original By: [Clauzewitz](https://github.com/clauzewitz).
+Original By [Clauzewitz](https://github.com/clauzewitz).
