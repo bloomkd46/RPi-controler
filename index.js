@@ -352,7 +352,7 @@ RaspberryPi.prototype = {
 
 				that.service.getCharacteristic(Characteristic.CurrentTemperature)
 					.setProps({
-						unit: Characteristic.Units.CELSIUS
+						unit: Characteristic.Units.FAHRENHEIT
 					})
 					.updateValue(that.temperature);
 			}
