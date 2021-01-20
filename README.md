@@ -9,7 +9,7 @@ This is Raspberry Pi Remote plugin for [Homebridge](https://github.com/nfarina/h
 * Display Raspberry Pi state.
 * Turn off Raspberry Pi.
 * Reboot Raspberry Pi.
-* Get Raspberry Pi tempature.
+* Get Raspberry Pi tempature in fahrenheit.
 
 
 
