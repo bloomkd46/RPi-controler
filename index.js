@@ -192,7 +192,7 @@ function RaspberryPi(log, config) {
 	}
 
 	if (this.enableReboot) {
-		this.rebootService = new Service.Button(this.name + ' Reboot', 'Reboot');
+		this.rebootService = new Service.switch(this.name + ' Reboot', 'Reboot');
 
 		this.rebootService
 			.getCharacteristic(Characteristic.On)
