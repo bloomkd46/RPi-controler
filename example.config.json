@@ -11,10 +11,6 @@
 			"accessory": "RaspberryPi",
 			"name": "Raspberry Pi",
 			"os": "linux",
-			"interval": 60000,
-			"showCpuUsage": false,
-			"showMemoryUsage": false,
-			"showTemperature": true,
 			"enableReboot": true
 		}
 	]
