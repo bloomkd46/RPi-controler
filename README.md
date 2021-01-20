@@ -7,6 +7,9 @@ This is Raspberry Pi Remote plugin for [Homebridge](https://github.com/nfarina/h
 
 ### Features
 * Display Raspberry Pi state.
+* Turn off Raspberry Pi.
+* Reboot Raspberry Pi.
+* Get Raspberry Pi tempature.
 
 
 
@@ -43,6 +46,6 @@ This is Raspberry Pi Remote plugin for [Homebridge](https://github.com/nfarina/h
 # License
 MIT License
 
+#Credit
 
-Original one by:
-https://github.com/clauzewitz
+Original By: [Clauzewitz](https://github.com/clauzewitz).
