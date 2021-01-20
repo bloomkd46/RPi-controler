@@ -1,6 +1,6 @@
 {
 	"name": "homebridge-rpi-controller",
-	"displayname": "RPi Controller"
+	"displayname": "RPi Controller",
 	"version": "1.0.1",
 	"description": "Raspberry Pi Remote control plugin for Homebridge.",
 	"license": "MIT",
