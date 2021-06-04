@@ -109,6 +109,26 @@ function getDeviceInfo() {
 						// RAM size: 1GB
 						model += '3 Model B';
 						break;
+					case 'a03111':
+					case 'b03111':
+					case 'c03111'"
+						// RAM size: a03111=1GB/b03111=2GB/c03111=4GB
+						model += '4 v1.1';
+						break;
+					case 'b03112':
+					case 'c03112':
+						// RAM size: b03112=2GB/c03112=4GB
+						model += '4 v1.2';
+						break;
+					case 'c03130':
+						// RAM size: 4GB
+						model += '4 v1.0';
+						break;
+					case 'a020d3':
+					default:
+						// RAM size: 1GB
+						model += '3 Model B+';
+						break;
 					case 'a020d3':
 					default:
 						// RAM size: 1GB
@@ -339,7 +359,7 @@ RaspberryPi.prototype = {
 
 		const that = this;
 
-		exec('/usr/lib/node_modules/homebridge-rpi-controller/current_temperature.sh', function (error, stdout, stderr) {
+		exec('/usr/local/lib/node_modules/homebridge-rpi-controller/current_temperature.sh', function (error, stdout, stderr) {
 			if (error) {
 				logger(error);
 			} else {
